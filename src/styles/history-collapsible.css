@@ -1,0 +1,42 @@
+
+/* ************************ History Collapsible ************************* */
+
+h3 , h5 , h1{
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
+}
+
+.collapsible{
+    padding: 0;
+    border: none;
+    background-color: rgba(255, 242, 242, 0.22);}
+
+.collapsible-header{
+    background-color: rgba(255, 255, 255, 0.76);
+    color: black;
+    border-bottom: 0 solid transparent;
+    transition: 0.5s;
+}
+
+.collapsible-body{
+    background-color: transparent;
+    color: black;
+    border-bottom: 0 solid transparent;
+}
+
+.center-div{
+    padding: 15px 0;
+    text-align: center;
+}
+
+.circle-clipper{
+    border-color: #0004ffab;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.no-margin{
+    margin: 0;
+}

@@ -1,0 +1,66 @@
+.navbar{
+    /* background-color: rgb(123, 108, 255); */
+    /* background: rgba(223, 223, 223, 0.432); */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.transparent-background{
+    background: rgba(223, 223, 223, 0.432);
+}
+
+.brand-logo{
+    cursor: pointer;
+}
+
+.brand-logo:focus{
+    outline:0;
+}
+
+.btn-floating{
+    background-color: #f1f1f173;
+}
+
+#mobile-menu{
+    padding-right: 0;
+    z-index: 1;
+    padding-top: 70px;
+    background-color: #ffffff;
+    color: red;
+}
+
+.logo-img{
+    max-height: 50px; 
+    padding-top: 10px; 
+    margin: 0 15px 0 15px;
+}
+
+.colored-background{
+    background-color: rgb(116, 130, 255);
+}
+
+.navbar-fixed{
+    position: fixed;
+}
+
+nav{
+    background-color: transparent;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.219); 
+}
+
+nav ul a, nav a{
+    text-shadow: 1px 1px 5px rgba(85, 85, 85, 0.89);
+}
+
+.mobile-menu-link{
+    text-shadow: 0 0 0 transparent !important;
+}
+
+.brand-logo{
+    position: relative;
+}
+
+
+
+

@@ -1,0 +1,43 @@
+.full-signin-section{
+    margin-top: 100px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.158);
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.mobile-img{
+    height:200px;
+}
+
+.section.hide-on-small-only{
+    height: 500px;
+}
+
+.submit-div{
+    margin-bottom: 0;
+}
+
+.login-div{
+    background-color: gray;
+}
+
+.head-text{
+    color:white;
+    text-shadow: 1px 1px 10px rgb(110, 110, 110);
+    margin-bottom: 0px;
+    overflow-wrap: break-word;
+}
+
+.header.hide-on-small-only{ 
+    margin-top: 100px;
+}
+
+.header.hide-on-med-and-up{ 
+    margin-top: 0;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0px;
+}

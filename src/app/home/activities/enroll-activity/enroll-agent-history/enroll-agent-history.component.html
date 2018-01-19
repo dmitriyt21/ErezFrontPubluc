@@ -1,0 +1,75 @@
+<ul class="collapsible" data-collapsible="accordion" materialize="collapsible">
+    <li>
+        <div class="collapsible-header" (click)="loadHistory()">
+            <i class="material-icons">account_circle</i>
+            היסטוריה
+        </div>
+
+        <div class="collapsible-body no-padding no-margin">
+            <ul 
+            *ngIf="!isLoading; else loading"
+            class="collapsible no-margin" 
+            data-collapsible="accordion" 
+            materialize="collapsible">   
+                <li
+                    *ngFor="let agentHistory of agent.agentHistory">
+                    <div class="collapsible-header">
+                            <i class="material-icons">account_circle</i>
+                            {{agentHistory.activityDate | date:"dd/MM/yyyy"}}
+                    </div>
+                    
+                    <div class="collapsible-body"> 
+                          <div class="row">
+                              <div class="col s6">
+                                  <span>{{agentHistory.target | number:'1.2-2'}}</span>
+                              </div>
+                              <div class="col s6">
+                                  <span>יעד ניקוד : </span>
+                              </div>
+                          </div> 
+                          <div class="row">
+                              <div class="col s6">
+                                  <span>{{agentHistory.percOfTarget | number:'1.2-2'}}%</span>
+                              </div>
+                              <div class="col s6">
+                                  <span>אחוז עמידה ביעד : </span>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col s6">
+                                  <span>{{agentHistory.points}}</span>
+                              </div>
+                              <div class="col s6">
+                                  <span>ניקוד לפעילות : </span>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col s6">
+                                  <span>{{agentHistory.sumOfSales | number:'1.2-2'}}</span>
+                              </div>
+                              <div class="col s6">
+                                  <span>סכום מכירה מצטבר {{agentHistory.activityDate | date:"MM" | hebDate:agentHistory.activityDate:true}} : </span>
+                              </div>
+                          </div>
+                      </div>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
+
+<ng-template #loading> 
+    <div class="center-div">
+        <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+    

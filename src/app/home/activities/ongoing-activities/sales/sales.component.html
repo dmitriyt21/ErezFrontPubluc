@@ -1,0 +1,75 @@
+<div class="fully-page">
+    <div class="row">
+        <div class="col xl12 col l12 col m12 col s12">                
+            <div *ngIf="!isLoading; else loading">
+                <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">   
+                    <li *ngFor="let agent of enrollActivityAgents">
+                        <div class="collapsible-header"
+                            [ngClass]="{'current-agent-div' : agent.agentId == agentService.getAgentData().agentId}">
+                            <i class="material-icons right">account_circle</i>
+
+                            <div class="right">
+                                <span class="bold">מקום {{agent.agentPlace}} : {{agent.agentName}}</span> 
+                                <br>
+                                אחוז עמידה ביעד לתקופה : {{agent.percOfTarget| number:'1.0-2'}}%
+                                <br>
+                                ניקוד : {{agent.points}}
+                            </div>
+                            
+                        </div>
+                        
+                                               
+                        <div class="collapsible-body"> 
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.agentId}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>מספר סוכן : </span>
+                                </div>
+                            </div> 
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.sumOfSales | number:'1.0-2'}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>סה"כ מכירות : </span>
+                                </div>
+                            </div> 
+
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.target | number:'1.0-2'}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>יעד מכירות : </span>
+                                </div>
+                            </div> 
+                        
+                            <!-- history -->
+                            <app-sales-history [agent]="agent"></app-sales-history>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading> 
+    <div class="center-div">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <h5>אנא המתן...</h5>
+    </div>
+</ng-template>
+            

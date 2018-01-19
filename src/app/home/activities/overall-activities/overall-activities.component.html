@@ -1,0 +1,82 @@
+<!-- <div class="video-background"></div> -->
+
+<div class="fully-page">
+    <div class="row">
+        <div class="col xl12 col l12 col m12 col s12">
+            <h3 class="center-align">Overall Activities</h3>
+            <div *ngIf="!isLoading; else loading">
+                <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">   
+                    <li
+                        *ngFor="let agent of overallActivityAgents">
+                        <div class="collapsible-header"
+                            [ngClass]="{'current-agent-div' : agent.agentId == agentService.getAgentData().agentId}">
+                            <i class="material-icons right">account_circle</i>
+
+                            <div class="right">
+                                <span class="bold">מקום {{agent.agentPlace}} : {{agent.agentName}}</span> 
+                                <br>
+                                מספר סוכן : {{agent.agentId}}
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="collapsible-body"> 
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.agentId}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>מספר סוכן : </span>
+                                </div>
+                        
+                            </div> 
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.enrollPoints}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>enroll points : </span>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.overallPoints}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>overall points : </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <span>{{agent.retentionPoints}}</span>
+                                </div>
+                                <div class="col s6">
+                                    <span>retention points : </span>
+                                </div>
+                            </div>
+                        
+                            <!-- history -->
+                            <!-- <app-enroll-agent-history [agent]="agent"></app-enroll-agent-history> -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading> 
+    <div class="center-div">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <h5>אנא המתן...</h5>
+    </div>
+</ng-template>

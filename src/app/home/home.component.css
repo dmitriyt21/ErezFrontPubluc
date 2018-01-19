@@ -1,0 +1,30 @@
+.no-padding{
+    padding: 0;
+}
+
+.section{
+    /* min-height: 300px; */
+}
+
+.login-div{
+    background-color: gray;
+}
+
+.head-text{
+    color:white;
+    text-shadow: 1px 1px 10px rgb(110, 110, 110);
+    margin-bottom: 0px;
+    overflow-wrap: break-word;
+}
+
+.header-margin-top{ 
+    margin-top: 150px;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0px;
+}
+
+.parallax-container {
+    height: 100vh;
+}

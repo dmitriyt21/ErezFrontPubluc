@@ -1,0 +1,45 @@
+<ul id="mobile-menu" class="side-nav" style="padding:0">
+    <!-- agent Data -->
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img style="height:160px; width:300px;" 
+                    src="assets/background/user-profile-bg.jpg">
+            </div>
+            <a><img class="circle" src="assets/background/user-profile-img.png"></a>
+            <a><span *ngIf="!getAgentData().isAdmin" class="white-text name">{{getAgentData().agentName}}</span></a>
+            <a><span *ngIf="getAgentData().isAdmin" class="white-text name">{{getAgentData().agentName}} - מנהל/ת</span></a>
+            <a><span class="white-text email">{{getAgentData().agentEmail}}</span></a>
+        </div>
+    </li>
+
+    <!-- menu -->
+    <div *ngIf="checkIfAgentConnected()">
+        <li>
+            <a class="subheader mobile-menu-link">תפריט</a>
+        </li>
+        <li>
+            <a class="mobile-menu-link waves-effect" [routerLink]="['/home']">דף הבית</a>
+        </li>
+        <li>
+            <a class="mobile-menu-link waves-effect" [routerLink]="['/activity']" data-activates="mobile-menu">פעילויות</a>
+        </li>
+        <li>
+            <a>
+                הודעות 
+                <i class="material-icons">email</i>
+            </a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+    </div>
+
+    <li><a class="subheader mobile-menu-link">התחברות</a></li>
+    <li *ngIf="!checkIfAgentConnected()">
+        <a class="mobile-menu-link waves-effect" [routerLink]="['/sign-in']">התחבר</a>
+    </li>
+    <li *ngIf="checkIfAgentConnected()">
+        <a class="mobile-menu-link waves-effect" (click)="signOut()">התנתק</a>
+    </li>
+</ul> 

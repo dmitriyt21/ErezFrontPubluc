@@ -1,0 +1,90 @@
+<h1 class="center-align">
+  אליפויות
+</h1>
+
+<div class="row">
+    <div class="col xl6 l6 m12 s12 right">
+        <div class="row">
+            <div class="col xl12 l12 m12 s12">
+                <div class="main-div">
+                    <div class="center-align">
+                        <h3>
+                            אליפות חודש {{date | date:"MM" | hebDate:date:true}}
+                        </h3>
+                        <a (click)="displayChampionOfMonth()" 
+                        class="btn btn-large blue pulse"
+                        *ngIf="!showChampionOfMonth">
+                        גלה לי לאיזה מקום הגעתי!
+                        </a>
+                    </div>
+                    <br>
+                    <div *ngIf="showChampionOfMonth">
+                        <app-champion-of-month></app-champion-of-month>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col xl12 l12 m12 s12">
+                <div class="main-div">
+                    <div class="center-align">
+                        <h3>
+                            אליפויות רבעון X
+                        </h3>
+                        <a (click)="displayChampionOfQuarter()" 
+                        class="btn btn-large green pulse"
+                        *ngIf="!showChampionOfQuarter">
+                        גלה לי לאיזה מקום הגעתי!
+                        </a>
+                    </div>
+                    <br>
+                    <div *ngIf="showChampionOfQuarter">
+                        <app-champion-of-quarter></app-champion-of-quarter>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col xl6 l6 m12 s12 left">
+        <app-graph></app-graph>
+    </div>
+    <!-- <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    אליפות חודש {{date | date:"MM" | hebDate:date:true}}
+                </h3>
+                <a (click)="displayChampionOfMonth()" 
+                class="btn btn-large blue pulse"
+                *ngIf="!showChampionOfMonth">
+                גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <br>
+            <div *ngIf="showChampionOfMonth">
+                <app-champion-of-month></app-champion-of-month>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    אליפויות רבעון X
+                </h3>
+                <a (click)="displayChampionOfQuarter()" 
+                class="btn btn-large green pulse"
+                *ngIf="!showChampionOfQuarter">
+                גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <br>
+            <div *ngIf="showChampionOfQuarter">
+                <app-champion-of-quarter></app-champion-of-quarter>
+            </div>
+        </div>
+    </div> -->
+</div>

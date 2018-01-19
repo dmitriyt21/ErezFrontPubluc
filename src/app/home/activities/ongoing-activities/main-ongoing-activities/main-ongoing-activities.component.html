@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    מכירות
+                </h3>
+                <a  (click)="displaySales()" 
+                    class="btn btn-large blue pulse"
+                    *ngIf="!showSales">
+                    גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <div *ngIf="showSales">
+                <app-sales></app-sales>
+            </div>
+        </div>
+    </div>
+
+    <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    מוצרים נבחרים
+                </h3>
+                <a  (click)="displayFeaturedProducts()" 
+                    class="btn btn-large green pulse"
+                    *ngIf="!showFeaturedProducts">
+                    גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <div *ngIf="showFeaturedProducts">
+                <app-featured-products></app-featured-products>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    הנחה ללקוחות
+                </h3>
+                <a  (click)="displayDiscountForCustomer()" 
+                    class="btn btn-large yellow pulse"
+                    *ngIf="!showDiscountForCustomer">
+                    גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <div *ngIf="showDiscountForCustomer">
+                <app-discount-for-customer></app-discount-for-customer>
+            </div>
+        </div>
+    </div>
+
+    <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    שימור וגיוס לקוחות 
+                </h3>
+                <a  (click)="displayCustomerRetention()" 
+                    class="btn btn-large red pulse"
+                    *ngIf="!showCustomerRetention">
+                    גלה לי לאיזה מקום הגעתי!
+                </a>
+            </div>
+            <div *ngIf="showCustomerRetention">
+                <app-customer-retention></app-customer-retention>
+            </div>
+        </div>
+    </div>
+</div>

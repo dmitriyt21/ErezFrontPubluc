@@ -1,0 +1,84 @@
+.table-div{
+    padding-top: 100px;
+}
+
+.dropdown-content li > a > i{
+    margin: 0;
+}
+
+ul{
+    padding-right: 0;
+}
+
+.tabs{
+    text-align: center;
+    background-color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.692);
+}
+
+.tabs .tab a.active{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabs .tab a{
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.tabs .tab a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.tabs .indicator{
+    background-color: #c8d1ff;
+}
+
+.dropdown-content li{
+    text-align: right;
+}
+
+.navigation-buttons{
+    bottom: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+td{
+    padding: 0;
+    margin: 0;
+}
+
+button{
+    margin: 0 5px 0 5px;
+}
+
+.fade-in-div{
+    animation: fade-in-div 1s linear backwards;
+}
+
+.fade-out-div{
+    animation: fade-out-div 1s linear forwards;
+}
+
+.no-effect{
+    opacity: 1;
+}
+
+@keyframes fade-in-div{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out-div{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

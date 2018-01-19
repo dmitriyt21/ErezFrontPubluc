@@ -1,0 +1,34 @@
+<!-- <div class="video-background"></div> -->
+
+<video loop autoplay muted>
+    <source [src]="setVideoBackground()" type="video/mp4">
+</video>
+
+<div class="container table-div">
+    <ul 
+    id="tabs-swipe tabs-fixed-width" 
+    class="tabs" 
+    materialize="tabs" 
+    swipeable="true" 
+    *ngIf="(links?.length && showMenu) || (links?.length && !isHomePage)">
+        <li
+            *ngFor="let link of links; let i = index"
+             
+            (click)="setPage(i)"
+            style="cursor:pointer;"  
+            class="tab col s3">
+            <a 
+                [routerLink]="['/activity' + link.urlPath]" 
+                [ngClass]="{active : currentPage == i}">
+                {{link.linkName}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- class="container"  -->
+
+<div 
+[ngClass]="{'fade-in-div':true , 'fade-out-div':fadeOut , 'no-effect':noEffect}">
+    <router-outlet></router-outlet>  
+</div>

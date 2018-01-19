@@ -1,0 +1,53 @@
+<div class="navbar-fixed"> 
+    
+    <nav 
+    [ngClass]="{'transparent-background' : isHeaderTransparent , 'colored-background' : !isHeaderTransparent}" 
+    class="navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+            <!-- Site logo -->
+            <div class="left">
+              <div class="brand-logo" [routerLink]="['/']">
+                    <div class="col s8 right">
+                        <a>MobileStore</a>
+                    </div>
+
+                    <div class="col s4 left">
+                        <img 
+                            src="https://media.freepik.com/accounts/img/badges/you_are_on_top.png" 
+                            class="logo-img">
+                    </div>
+              </div>
+            </div>
+
+            <!-- Site Menu -->
+            <div *ngIf="checkIfAgentConnected()">
+                <div class="right">
+                    <a
+                        href="#"  
+                        materialize="sideNav" 
+                        data-activates="mobile-menu" 
+                        class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </div>
+            
+                <!-- web menu -->
+                <div class="right">
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li *ngIf="!checkIfAgentConnected()"><a [routerLink]="['/sign-in']">התחבר</a></li>
+                        <li *ngIf="checkIfAgentConnected()"><a (click)="signOut()">התנתק</a></li>
+                        <li><a [routerLink]="['/activity']">פעילויות</a></li>
+                        <li><a [routerLink]="['/home']">דף הבית</a></li>
+                        <!-- <li><a><i class="material-icons">email</i></a></li> -->
+                        <li><a class="btn btn-floating pulse"><i class="material-icons">email</i></a></li>
+                    </ul>
+                </div>
+
+                <!-- mobile menu -->
+                <app-mobile-menu></app-mobile-menu>
+            </div>                       
+        </div>
+      </div>
+    </nav>
+</div> 
