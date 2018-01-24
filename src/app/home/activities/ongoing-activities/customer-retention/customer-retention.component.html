@@ -4,7 +4,7 @@
             <div *ngIf="!isLoading; else loading">
                 <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">   
                     <li *ngFor="let agent of enrollActivityAgents">
-                        <div class="collapsible-header"
+                        <div class="collapsible-header" (click)="passAgent4Graph(agent.agentId)"
                             [ngClass]="{'current-agent-div' : agent.agentId == agentService.getAgentData().agentId}">
                             <i class="material-icons right">account_circle</i>
 
@@ -53,6 +53,7 @@
                         
                             <!-- history -->
                             <app-customer-retention--history [agent]="agent"></app-customer-retention--history>
+                            
                         </div>
                     </li>
                 </ul>

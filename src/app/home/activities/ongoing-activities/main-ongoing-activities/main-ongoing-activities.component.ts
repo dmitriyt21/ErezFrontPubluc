@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GraphService } from '../../../../shared/services/graph.service';
 
 @Component({
   selector: 'app-main-ongoing-activities',
@@ -12,8 +13,9 @@ export class MainOngoingActivitiesComponent implements OnInit {
     showFeaturedProducts : boolean;
     showDiscountForCustomer : boolean;
     showCustomerRetention : boolean;
+    showGraph: boolean;
 
-    constructor() { }
+    constructor(private graphService: GraphService) { }
 
     ngOnInit() {
     }
@@ -32,5 +34,9 @@ export class MainOngoingActivitiesComponent implements OnInit {
 
     displayCustomerRetention(){
         this.showCustomerRetention =! this.showCustomerRetention;
+    }
+
+    displayGraph(){
+        this.showGraph =! this.showGraph;
     }
 }

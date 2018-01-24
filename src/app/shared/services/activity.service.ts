@@ -3,6 +3,9 @@ import { AgentService } from './agent.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
+
+
 @Injectable()
 export class ActivityService{
     constructor(private httpClient : HttpClient,
@@ -16,7 +19,7 @@ export class ActivityService{
      */
     getEnrollActivities(callBack : (EnrollActivitiesAgents) => void , errorCallBack : (error) => void){
         if(this.agentService.checkIfAgentConnected()){
-            this.httpClient.get(this.urlService.urlApiPath + '/enrollActivities' , {
+            this.httpClient.get(this.urlService.urlApiPath + '/enrollmentActivity' , {
                 headers: this.urlService.getAuthHeader(this.agentService.getAgentToken())
               }
             )
@@ -67,7 +70,7 @@ export class ActivityService{
      */
     getAllAgentEnrollActivities(AgentId : number , callBack : (agentsDataList) => void , errorCallBack : (error) => void){
         if(this.agentService.checkIfAgentConnected()){
-            this.httpClient.get(this.urlService.urlApiPath + '/enrollActivities' +  "/" + AgentId, {
+            this.httpClient.get(this.urlService.urlApiPath + '/enrollmentActivity' +  "/" + AgentId, {
                 headers: this.urlService.getAuthHeader(this.agentService.getAgentToken())
               }
             )
@@ -98,7 +101,7 @@ export class ActivityService{
     private agentEnrollActivityData(agentId : number , isHistory : boolean , callBack : (agentData) => void , errorCallBack : (error) => void){
         if(this.agentService.checkIfAgentConnected()){
             let getHistoryPath = "?hist=" +  isHistory;
-            this.httpClient.get(this.urlService.urlApiPath + '/enrollActivities' +  "/" + agentId + getHistoryPath, {
+            this.httpClient.get(this.urlService.urlApiPath + '/enrollmentActivity' +  "/" + agentId + getHistoryPath, {
                 headers: this.urlService.getAuthHeader(this.agentService.getAgentToken())
               }
             )
@@ -110,4 +113,6 @@ export class ActivityService{
             this.agentService.agentSignOut();
         }
     }
+
+
 }

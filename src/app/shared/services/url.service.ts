@@ -3,7 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UrlService {
-    public urlApiPath = 'https://erezapi.azurewebsites.net/api';
+    public urlApiPath = 'https://erezapinew.azurewebsites.net/api';
     public agentPathLocalStorage = "cad"; //cad - connected Agent data
     
     public getAuthHeader(agentToken : string) : HttpHeaders{

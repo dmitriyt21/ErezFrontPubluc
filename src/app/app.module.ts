@@ -8,7 +8,11 @@ import { ErrorService } from './shared/services/error.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AgentService } from './shared/services/agent.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+//import { NgModule } from '@angular/core';
+
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -99,8 +103,10 @@ import { CustomerRetentionHistoryComponent } from './home/activities/ongoing-act
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
-    MaterializeModule
+    MaterializeModule,
+    MDBBootstrapModule.forRoot()
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [AgentService,
               AuthGuardService,
               ActivityService,

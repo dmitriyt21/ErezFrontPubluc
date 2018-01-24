@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EnrollActivityAgent } from '../../../../shared/models/enroll-activity-agent.model';
 import { ActivityService } from '../../../../shared/services/activity.service';
 import { AgentService } from '../../../../shared/services/agent.service';
+import { GraphService } from '../../../../shared/services/graph.service';
 
 @Component({
   selector: 'app-customer-retention',
@@ -14,12 +15,13 @@ export class CustomerRetentionComponent implements OnInit {
 
     enrollActivityAgents : Array<EnrollActivityAgent> = new Array<EnrollActivityAgent>();
     index = 0;
-    timeForWaiting = 2000;
+    timeForWaiting = 200;
     pushAgentInterval;
     isLoading : boolean = true;
 
     constructor(private activityService : ActivityService,
-                private agentService : AgentService) { }
+                private agentService : AgentService,
+                private graphService: GraphService) { }
 
     ngOnInit() {
         this.getEnrollActivities();
@@ -70,5 +72,10 @@ export class CustomerRetentionComponent implements OnInit {
         if(this.index < 0){
             clearInterval(this.pushAgentInterval);
         }
+    }
+
+    passAgent4Graph(agentId: number){
+        console.log(agentId);
+        this.graphService.passAgent4Graph(agentId);
     }
 }

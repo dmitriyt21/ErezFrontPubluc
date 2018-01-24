@@ -72,4 +72,21 @@
             </div>
         </div>
     </div>
+    <div class="col xl6 l6 m12 s12">
+        <div class="main-div">
+            <div class="center-align">
+                <h3>
+                    גרף 
+                </h3>
+                <a  (click)="displayGraph()" 
+                    class="btn btn-large red pulse"
+                    *ngIf="!showGraph">
+                    גרף
+                </a>
+            </div>
+            <div *ngIf="showGraph">
+                <app-graph></app-graph>
+            </div>
+        </div>
+    </div>
 </div>

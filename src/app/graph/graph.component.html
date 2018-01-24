@@ -1,18 +1,46 @@
 <div class="row">
     <div class="col 12">
-
+        <div *ngIf="!isLoading; else loading">
     <!-- TEMP DATA -->
     <div class="card">
         <div class="card-move-up waves-effect waves-block waves-light">
             <div class="move-up cyan darken-1">
-                <img src="assets/background/graph-top.jpg" class="trending-line-chart-wrapper responsive-img" style="z-index:0;">
+                <!-- <img src="assets/background/graph-top.jpg" class="trending-line-chart-wrapper responsive-img" style="z-index:0;"> -->
+                <div style="display: block">
+                    <canvas mdbChart 
+                        [chartType]="chartType"
+                        [datasets]="chartDatasets" 
+                        [labels]="chartLabels"
+                        [colors]="chartColors"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        (chartHover)="chartHovered($event)" 
+                        (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
             </div>
         </div>
-        <div class="card-content">
+        <!-- <div class="card-content">
             <img src="assets/background/graph-bottom.jpg" class="responsive-img" style="z-index:0;">
             <br>
-        </div>
+        </div> -->
     </div>
     <!-- TEMP DATA -->
-    
+    </div>
 </div>
+
+<ng-template #loading> 
+    <div class="center-div">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <h5>אנא המתן...</h5>
+    </div>
+</ng-template>
